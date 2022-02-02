@@ -24,5 +24,5 @@ export const Heading = styled.h3`
 
 export const Number = styled.h1`
     color: ${variables.colorDarkText};
-    font-size: 8rem;
+    font-size: 7rem;
 `;
