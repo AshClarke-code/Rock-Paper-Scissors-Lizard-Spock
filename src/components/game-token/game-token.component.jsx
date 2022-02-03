@@ -1,24 +1,26 @@
 import React from 'react';
-import {TokenContainer, IconContainer} from "./game-token.styles";
+import {tokenTypes} from "./../../utils/tokenTypes";
 import Scissors from "./../../assets/images/icon-scissors.svg";
 import Paper from "./../../assets/images/icon-paper.svg";
 import Rock from "./../../assets/images/icon-rock.svg";
 import Lizard from "./../../assets/images/icon-lizard.svg";
 import Spock from "./../../assets/images/icon-spock.svg";
+import {TokenContainer, IconContainer} from "./game-token.styles";
+
 
 export const GameToken = ({
-    tokenType = "Scissors"
+    tokenType = "SPOCK"
 }) => {
 
     const getTokenIcon = () => {
         switch(tokenType) {
-            case "Paper":
+            case tokenTypes.PAPER:
                 return Paper;
-            case "Rock":
+            case tokenTypes.ROCK:
                 return Rock;
-            case "Lizard":
+            case tokenTypes.LIZARD:
                 return Lizard;
-            case "Spock":
+            case tokenTypes.SPOCK:
                 return Spock;
 
             default: return Scissors;

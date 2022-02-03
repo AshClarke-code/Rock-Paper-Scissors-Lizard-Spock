@@ -1,5 +1,6 @@
 import styled, {css} from "styled-components";
 import {variables} from "./../../utils/variables";
+import {tokenTypes} from "./../../utils/tokenTypes";
 
 const scissorsStyles = css`
     background: ${variables.colorScissors};
@@ -29,13 +30,13 @@ const spockStyles = css`
 
 const getColors = props => {
     switch(props.tokenType) {
-        case "Paper":
+        case tokenTypes.PAPER:
             return paperStyles;
-        case "Rock":
+        case tokenTypes.ROCK:
             return rockStyles;
-        case "Lizard":
+        case tokenTypes.LIZARD:
             return lizardStyles;
-        case "Spock":
+        case tokenTypes.SPOCK:
             return spockStyles;
 
         default: return scissorsStyles;
