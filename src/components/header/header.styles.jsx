@@ -21,4 +21,5 @@ export const Title = styled.h2`
     text-transform: uppercase;
     line-height: .8;
     font-weight: 700;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.9);
 `;

@@ -1,9 +1,9 @@
 import React from 'react';
 import {ScoreContainer, Heading, Number} from "./score.styles";
 
-export const Score = () => (
+export const Score = ({wins}) => (
     <ScoreContainer>
         <Heading>Score</Heading>
-        <Number>10</Number>
+        <Number>{wins}</Number>
     </ScoreContainer>
 )

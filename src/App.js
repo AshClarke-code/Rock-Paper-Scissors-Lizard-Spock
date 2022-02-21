@@ -1,19 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.scss';
 import {Header} from "./components/header/header.component";
-import {SelectToken} from "./components/select-token/select-token.component";
 import {Button} from "./components/button/button.component";
-import {MatchUp} from  "./components/match-up/match-up.component";
+import {GameScreen} from "./components/game-screen/game-screen.component";
 
 function App() {
+  let [wins, setWins] = useState(0);
 
+  const handleWin = () => setWins(wins + 1);
 
   return (
     <div className="App">
-      <Header/>
-      {/* <SelectToken/> */}
-      <MatchUp/>
-      <Button/>
+      <Header wins={wins}/>
+      <GameScreen handleWin={handleWin}/>
+      <Button>Rules</Button>
     </div>
   );
 }

@@ -4,12 +4,12 @@ import {GameToken} from "./../game-token/game-token.component";
 import {tokenTypes} from "./../../utils/tokenTypes";
 import {SelectTokenContainer, ScissorsContainer, RockContainer, PaperContainer, LizardContainer, SpockContainer} from "./select-token.styles";
 
-export const SelectToken = () => {
+export const SelectToken = ({selectToken}) => {
     const [playerToken, setPlayerToken] = useState("");
 
     useEffect(() => console.log(playerToken), [playerToken]);
 
-    const selectToken = event => setPlayerToken(event.target.id);
+    
   return (
     <SelectTokenContainer imageUrl={Pentagon}>
         <ScissorsContainer>
