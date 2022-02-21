@@ -27,6 +27,19 @@ const spockStyles = css`
     box-shadow: 2px .7rem 0 0 ${variables.colorSpockShadow};
 `;
 
+const smallTokenStyles = css`
+    width: 12rem;
+    height: 12rem;
+`;
+
+const bigTokenStyles = css`
+    width: 21rem;
+    height: 21rem;
+    margin-left: -1rem;
+    margin-top: -1rem;
+    z-index: 5;
+`;
+
 
 const getColors = props => {
     switch(props.tokenType) {
@@ -41,17 +54,23 @@ const getColors = props => {
 
         default: return scissorsStyles;
     }
-}
+};
+
+
+const getTokenSize = props => {
+    return props.isBigToken ? bigTokenStyles : smallTokenStyles;
+};
 
 
 export const TokenContainer = styled.div`
     border-radius: 100%;
-    width: 13rem;
-    height: 13rem;
+    position: absolute;
+
     display: flex;
     align-items: center;
     justify-content: center;
-
+    cursor: pointer;
+    ${getTokenSize};
     ${getColors};
 `;
 

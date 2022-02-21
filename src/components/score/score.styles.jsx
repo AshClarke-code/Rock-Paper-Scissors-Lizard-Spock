@@ -3,7 +3,7 @@ import {variables} from "./../../utils/variables";
 
 
 export const ScoreContainer = styled.div`
-    height: 90%;
+    height: 95%;
     width: 25%;
     background-color: white;
     border-radius: inherit;

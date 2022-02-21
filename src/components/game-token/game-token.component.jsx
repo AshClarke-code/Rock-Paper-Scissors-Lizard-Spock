@@ -9,7 +9,9 @@ import {TokenContainer, IconContainer} from "./game-token.styles";
 
 
 export const GameToken = ({
-    tokenType = "SPOCK"
+    tokenType = "SPOCK",
+    handleClick,
+    isBigToken = false
 }) => {
 
     const getTokenIcon = () => {
@@ -28,9 +30,9 @@ export const GameToken = ({
     };
     
     return (
-        <TokenContainer tokenType={tokenType}>
-            <IconContainer>
-            <img src={getTokenIcon()} alt={`${tokenType} icon`} width="40%" height="50%"/>
+        <TokenContainer tokenType={tokenType} id={tokenType} onClick={handleClick} isBigToken={isBigToken}>
+            <IconContainer id={tokenType} onClick={handleClick} >
+            <img src={getTokenIcon()} alt={`${tokenType} icon`} width="40%" height="50%" id={tokenType} onClick={handleClick}/>
             </IconContainer>
         </TokenContainer>
     )

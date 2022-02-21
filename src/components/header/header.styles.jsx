@@ -10,7 +10,8 @@ export const HeaderContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 2.5rem;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 8rem;
 `;
 
 export const Title = styled.h2`
