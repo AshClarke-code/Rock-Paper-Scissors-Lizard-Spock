@@ -30,6 +30,18 @@ const spockStyles = css`
 const smallTokenStyles = css`
     width: 12rem;
     height: 12rem;
+
+    @media only screen and (max-width: 600px) {
+        width: 10rem;
+        height: 10rem;
+    }
+
+    @media only screen and (max-width: 400px) {
+        width: 9rem;
+        height: 9rem;
+    }
+
+
 `;
 
 const bigTokenStyles = css`

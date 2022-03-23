@@ -17,7 +17,7 @@ export const MatchUp = ({
 
   useEffect(() => {
     const token = selectComputerToken();
-    setTimeout(() => setHouseToken(token), 1000);
+    setTimeout(() => setHouseToken(token), 500);
     const victor = findWinner(playerToken, token);
     setTimeout(() => {
       if(victor === 2) setWinner("draw");

@@ -13,6 +13,22 @@ const defaultStyles = css`
         color: white;
         
     }
+
+    
+    @media only screen and (max-width: 600px) {
+        right: 50%;
+        transform: translateX(50%);
+        bottom: 5rem;
+        width: 30%;
+        height: 7%;
+        font-size: 2rem;
+    }
+
+    @media only screen and (max-width: 400px) {
+        width: 40%;
+        height: 7%;
+        bottom: 10rem;
+    }
 `;
 
 const invertedStyles = css`

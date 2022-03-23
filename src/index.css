@@ -11,9 +11,6 @@ html {
   /* writing as % keeps user ability to change browser font size */
   /* now 1 rem = 10px */
 
-  /* @media only screen and (max-width: $bp-tiny){
-    font-size: 50%;
-  } */
 }
 
 
