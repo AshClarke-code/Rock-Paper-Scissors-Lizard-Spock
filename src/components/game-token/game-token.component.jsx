@@ -1,18 +1,19 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {tokenTypes} from "./../../utils/tokenTypes";
 import Scissors from "./../../assets/images/icon-scissors.svg";
 import Paper from "./../../assets/images/icon-paper.svg";
 import Rock from "./../../assets/images/icon-rock.svg";
 import Lizard from "./../../assets/images/icon-lizard.svg";
 import Spock from "./../../assets/images/icon-spock.svg";
+import {GameContext} from "./../../contexts/game.contexts";
 import {TokenContainer, IconContainer} from "./game-token.styles";
 
 
 export const GameToken = ({
     tokenType = "SPOCK",
-    handleClick,
     isBigToken = false
 }) => {
+    const {selectToken} = useContext(GameContext);
 
     const getTokenIcon = () => {
         switch(tokenType) {
@@ -30,9 +31,9 @@ export const GameToken = ({
     };
     
     return (
-        <TokenContainer tokenType={tokenType} id={tokenType} onClick={handleClick} isBigToken={isBigToken}>
-            <IconContainer id={tokenType} onClick={handleClick} >
-            <img src={getTokenIcon()} alt={`${tokenType} icon`} width="40%" height="50%" id={tokenType} onClick={handleClick}/>
+        <TokenContainer tokenType={tokenType} id={tokenType} onClick={selectToken} isBigToken={isBigToken}>
+            <IconContainer id={tokenType} onClick={selectToken} >
+            <img src={getTokenIcon()} alt={`${tokenType} icon`} width="40%" height="50%" id={tokenType} onClick={selectToken}/>
             </IconContainer>
         </TokenContainer>
     )

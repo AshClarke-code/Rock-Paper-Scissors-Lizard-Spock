@@ -26,8 +26,8 @@ export const SelectTokenContainer = styled.div`
     }
 
     @media only screen and (max-width: 600px) {
-        width: 50%;
-        height: 45%;
+        width: 60%;
+        height: 50%;
     }
 
 `;
@@ -43,7 +43,7 @@ export const ScissorsContainer = styled.div`
     }
 
     @media only screen and (max-width: 400px) {
-        margin-top: 80%;
+        margin-top: 100%;
         margin-left: -90%;
     }
 `;
@@ -68,8 +68,8 @@ export const SpockContainer = styled.div`
     }
 
     @media only screen and (max-width: 400px) {
-        margin-left: -150%;
-        margin-top: 20%;
+        margin-left: -130%;
+        margin-top: 25%;
     }
 `;
 
@@ -80,8 +80,8 @@ export const PaperContainer = styled.div`
     margin-top: -20%;
 
     @media only screen and (max-width: 400px) {
-        margin-left: -20%;
-        margin-top: 20%;
+        margin-left: -25%;
+        margin-top: 25%;
     }
 `;
 

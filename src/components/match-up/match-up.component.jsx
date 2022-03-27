@@ -1,15 +1,13 @@
-import React, { useEffect, useState} from 'react';
+import React, { useEffect, useState, useContext} from 'react';
 import {GameToken} from "./../game-token/game-token.component";
 import {selectComputerToken} from "./../../utils/selectToken";
 import {findWinner} from "./../../utils/findWinner";
 import {Button} from "./../button/button.component";
+import {GameContext} from "./../../contexts/game.contexts";
 import { MatchUpContainer, SelectionContainer, ContainerHeading, TokenContainer, FeedbackContainer, FeedbackMessage} from './match-up.styles';
 
-export const MatchUp = ({
-  playerToken,
-  handleClick,
-  handleWin
-}) => {
+export const MatchUp = () => {
+  const {handleWin, playerToken, clearPlayerToken}  = useContext(GameContext);
   const [playerActive, setPlayerActive]= useState(false);
   const [houseActive, setHouseActive] = useState(false);
   const [houseToken, setHouseToken] = useState("");
@@ -17,7 +15,7 @@ export const MatchUp = ({
 
   useEffect(() => {
     const token = selectComputerToken();
-    setTimeout(() => setHouseToken(token), 500);
+    setTimeout(() => setHouseToken(token), 1000);
     const victor = findWinner(playerToken, token);
     setTimeout(() => {
       if(victor === 2) setWinner("draw");
@@ -26,13 +24,13 @@ export const MatchUp = ({
         setWinner("you won");
         handleWin();
       };
-    }, 1300);
+    }, 1600);
     setTimeout(() => {
       if(victor === 2) return;
       if(victor === 0) setHouseActive(true);
       if(victor === 1) setPlayerActive(true);
     }, 2000);
-  }, []);
+  }, [playerToken]);
 
   return (
     <MatchUpContainer>
@@ -44,7 +42,7 @@ export const MatchUp = ({
       </SelectionContainer>
       <FeedbackContainer winner={winner}>
           <FeedbackMessage>{winner}</FeedbackMessage>
-          <Button inverted={true} handleClick={handleClick}>Play again</Button>
+          <Button inverted={true} handleClick={clearPlayerToken}>Play again</Button>
       </FeedbackContainer>
       <SelectionContainer>
         <ContainerHeading>The house picked</ContainerHeading>
