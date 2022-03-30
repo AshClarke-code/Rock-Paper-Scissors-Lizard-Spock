@@ -1,13 +1,13 @@
 import React, { useEffect, useState, useContext} from 'react';
-import {GameToken} from "./../game-token/game-token.component";
 import {selectComputerToken} from "./../../utils/selectToken";
 import {findWinner} from "./../../utils/findWinner";
-import {Button} from "./../button/button.component";
+import {FeedbackBox} from "./../feedback-box/feedback-box.component";
+import {SelectionBox} from "./../selection-box/selection-box.component";
 import {GameContext} from "./../../contexts/game.contexts";
-import { MatchUpContainer, SelectionContainer, ContainerHeading, TokenContainer, FeedbackContainer, FeedbackMessage} from './match-up.styles';
+import { MatchUpContainer} from './match-up.styles';
 
 export const MatchUp = () => {
-  const {handleWin, playerToken, clearPlayerToken}  = useContext(GameContext);
+  const {handleWin, playerToken}  = useContext(GameContext);
   const [playerActive, setPlayerActive]= useState(false);
   const [houseActive, setHouseActive] = useState(false);
   const [houseToken, setHouseToken] = useState("");
@@ -34,24 +34,9 @@ export const MatchUp = () => {
 
   return (
     <MatchUpContainer>
-      <SelectionContainer>
-        <ContainerHeading>You picked</ContainerHeading>
-        <TokenContainer isActive={playerActive}>
-          <GameToken isBigToken={true} tokenType={playerToken}/>
-        </TokenContainer>
-      </SelectionContainer>
-      <FeedbackContainer winner={winner}>
-          <FeedbackMessage>{winner}</FeedbackMessage>
-          <Button inverted={true} handleClick={clearPlayerToken}>Play again</Button>
-      </FeedbackContainer>
-      <SelectionContainer>
-        <ContainerHeading>The house picked</ContainerHeading>
-        <TokenContainer isActive={houseActive}>
-          {
-            houseToken ? <GameToken isBigToken={true} tokenType={houseToken}/> : null
-          }
-        </TokenContainer>
-      </SelectionContainer>
+      <SelectionBox heading="You picked" isActive={playerActive} token={playerToken}/>
+      <FeedbackBox winner={winner}/>
+      <SelectionBox heading="The house picked" isActive={houseActive} token={houseToken}/>
     </MatchUpContainer>
   );
 };

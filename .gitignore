@@ -34,3 +34,5 @@ yarn-error.log*
 .prettierignore
 
 node_modules
+
+/design

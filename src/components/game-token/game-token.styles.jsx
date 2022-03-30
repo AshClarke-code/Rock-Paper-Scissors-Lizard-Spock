@@ -50,6 +50,23 @@ const bigTokenStyles = css`
     margin-left: -1rem;
     margin-top: -1rem;
     z-index: 5;
+
+    @media only screen and (max-width: 600px) {
+        width: 18rem;
+        height: 18rem;
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    @media only screen and (max-width: 500px) {
+        width: 15rem;
+        height: 15rem;
+    }
+
+    @media only screen and (max-width: 400px) {
+        width: 12rem;
+        height: 12rem;
+    }
 `;
 
 

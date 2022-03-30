@@ -19,6 +19,7 @@ export const GameProvider = ({children}) => {
 
     const selectToken = event => setPlayerToken(event.target.id);
     const clearPlayerToken = event => setPlayerToken("");
+    
 
     const value = {
         playerToken, 
